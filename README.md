@@ -52,6 +52,36 @@
       showHello();
     })();
   </script>
+  <script>
+    var VIRTUAL_AGENT_NAME = 'replace me with name of the virtual department';
+    var HUMAN_DEPARTMENT_NAME = 'replace me with name of human department';
+
+    zE('webWidget:on', 'chat:departmentStatus', function(dept) {
+        if (dept.name === VIRTUAL_AGENT_NAME && dept.status === 'online') {
+            zE('webWidget', 'updateSettings', {
+                webWidget: {
+                    chat: {
+                        departments: {
+                            enabled: [''],
+                            select: VIRTUAL_AGENT_NAME
+                        },
+                    }
+                }
+            });
+        } else if (dept.name === VIRTUAL_AGENT_NAME && dept.status !== 'online') {
+            zE('webWidget', 'updateSettings', {
+                webWidget: {
+                    chat: {
+                        departments: {
+                            enabled: [''],
+                            select: HUMAN_DEPARTMENT_NAME
+                        },
+                    }
+                }
+            });
+        }
+    });
+</script>
 
 </body>
 
