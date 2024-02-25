@@ -75,7 +75,7 @@
   </script>
 </script>
 <!-- Start of Zendesk Widget script -->
-<script id="ze-snippet" src="https://static.zdassets.com/ekr/e9c9d380-7e28-458d-8703-b2ad2bd96843">
+<script id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=e9c9d380-7e28-458d-8703-b2ad2bd96843">
 </script>
 <!-- End of Zendesk Widget script -->
 
