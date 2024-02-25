@@ -23,7 +23,7 @@
     </script>
 
     <!-- Start of z3n2671 Zendesk Widget script -->
-    <script id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=YOUR_SNIPPET_KEY">
+    <script id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=e9c9d380-7e28-458d-8703-b2ad2bd96843">
     </script>
     <!-- End of z3n2671 Zendesk Widget script -->
   </body>
