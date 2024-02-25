@@ -1,29 +1,38 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
-  <meta charset="utf-8">
+    <title>Hello, World!</title>
+    <meta charset="utf-8">
 </head>
 
 <body>
+    <p>Hello, World!</p>
 
-  <!-- dynamic content placeholder -->
-  <div id="content" style="padding-top: 20px;"></div>
+    <script type="text/javascript">
+        window.zESettings = {
+            webWidget: {
+                color: {
+                    theme: '#78a300'
+                },
+                offset: {
+                    horizontal: '100px',
+                    vertical: '100px'
+                },
 
-  <!-- Web Widget -->
-  <script id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=e9c9d380-7e28-458d-8703-b2ad2bd96843"></script>
+        };
+    </script>
+    <!-- Start of Zendesk Widget script -->
+    <script id="ze-snippet" src="https://static.zdassets.com/ekr/e9c9d380-7e28-458d-8703-b2ad2bd96843">
+    </script>
+    <!-- End of Zendesk Widget script -->
+<script type="text/javascript">
+  zE('webWidget', 'setLocale', 'fr');
+</script>
 
-  <!-- hello template -->
-  <script id="hello-template" type="text/x-handlebars-template">
-    <p>Hello!</p>
-    <a id="link-goodbye" href="#">I'm finished reading this page!</a>
-  </script>
-
-  <!-- goodbye template -->
-  <script id="goodbye-template" type="text/x-handlebars-template">
-    <p>Goodbye!</p>
-    <a id="link-hello" href="#">No, take me back!</a>
-  </script>
-
+  <button onclick="zE('webWidget', 'hide')">Hide Web Widget</button>
+</body>
+</html>
   <!-- show templates -->
   <script src="https://cdn.jsdelivr.net/npm/handlebars@4.3.3/dist/handlebars.min.js"></script>
   <script>
@@ -52,35 +61,7 @@
       showHello();
     })();
   </script>
-  <script>
-    var VIRTUAL_AGENT_NAME = 'replace me with name of the virtual department';
-    var HUMAN_DEPARTMENT_NAME = 'replace me with name of human department';
 
-    zE('webWidget:on', 'chat:departmentStatus', function(dept) {
-        if (dept.name === VIRTUAL_AGENT_NAME && dept.status === 'online') {
-            zE('webWidget', 'updateSettings', {
-                webWidget: {
-                    chat: {
-                        departments: {
-                            enabled: [''],
-                            select: VIRTUAL_AGENT_NAME
-                        },
-                    }
-                }
-            });
-        } else if (dept.name === VIRTUAL_AGENT_NAME && dept.status !== 'online') {
-            zE('webWidget', 'updateSettings', {
-                webWidget: {
-                    chat: {
-                        departments: {
-                            enabled: [''],
-                            select: HUMAN_DEPARTMENT_NAME
-                        },
-                    }
-                }
-            });
-        }
-    });
 </script>
 
 </body>
