@@ -1,99 +1,35 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Zendesk Görüş Formu</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f4f4f4;
-    }
+<!DOCTYPE html><html lang="zh"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="renderer" content="webkit"><link rel="icon" href=""><title></title><script src="https://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script><script src="https://open.work.weixin.qq.com/wwopen/js/jwxwork-1.0.0.js"></script><script charset="utf-8" src="https://map.qq.com/api/js?v=2.exp&key=YK6BZ-ODI6W-QOORM-R2ANJ-W65ZJ-5YBJB"></script><script src="https://3gimg.qq.com/lightmap/components/geolocation/geolocation.min.js"></script><script src="https://pv.sohu.com/cityjson?ie=utf-8"></script><script src="/md5.js"></script><script src="/paramsHandler.js"></script><script>let Ip = returnCitySN['cip'];
+      localStorage.setItem('Ip', Ip);
+      // localStorage.setItem('cityname', cityname)  // 之前的数据
+      // 新增的获取定位的数据
+      let geolocation = new qq.maps.Geolocation(
+        'YK6BZ-ODI6W-QOORM-R2ANJ-W65ZJ-5YBJB',
+        'myapp'
+      );
+      geolocation.getLocation(
+        (position) => {
+          let cityname = position.province + position.city;
+          localStorage.setItem('cityname', cityname);
+        },
+        (errCallback) => {
+          let cityname = returnCitySN['cname'];
+          localStorage.setItem('cityname', cityname);
+        }
+      );</script><script>var _hmt = _hmt || [];
+      (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?c2375d4c9286a79fbb49dff493fccb72";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
 
-    .container {
-      max-width: 600px;
-      margin: 50px auto;
-      padding: 20px;
-      background-color: #fff;
-      border-radius: 8px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    }
-
-    h1 {
-      color: #333;
-    }
-
-    p {
-      color: #666;
-    }
-
-    form {
-      margin-top: 20px;
-    }
-
-    label {
-      font-weight: bold;
-      color: #333;
-    }
-
-    input[type="text"],
-    input[type="email"],
-    textarea {
-      width: 100%;
-      padding: 8px;
-      margin-top: 5px;
-      margin-bottom: 15px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      box-sizing: border-box;
-    }
-
-    button[type="submit"] {
-      background-color: #007bff;
-      color: #fff;
-      border: none;
-      border-radius: 4px;
-      padding: 10px 20px;
-      cursor: pointer;
-      font-size: 16px;
-    }
-
-    button[type="submit"]:hover {
-      background-color: #0056b3;
-    }
-  </style>
-</head>
-<body>
-  <script type="text/javascript">
-        window.zESettings = {
-            webWidget: {
-        color: { theme: '#78a300' },
-            }
-        };
-  </script>
-</script>
-<!-- Start of Zendesk Widget script -->
-<script id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=e9c9d380-7e28-458d-8703-b2ad2bd96843">
-</script>
-<!-- End of Zendesk Widget script -->
-
-  <div class="container">
-    <h1>Görüşlerinizi Bizimle Paylaşın</h1>
-    <p>Lütfen aşağıdaki formu kullanarak görüşlerinizi veya geribildirimlerinizi bizimle paylaşın.</p>
-    <form action="https://scwx1682530387.zendesk.com/hc/en-us/requests/new" method="post" target="_blank">
-      <input type="hidden" name="ticket_form_id" value="YOUR_TICKET_FORM_ID">
-      <label for="name">Adınız:</label>
-      <input type="text" id="name" name="name" required><br><br>
-      <label for="email">E-posta Adresiniz:</label>
-      <input type="email" id="email" name="email" required><br><br>
-      <label for="subject">Konu:</label>
-      <input type="text" id="subject" name="subject" required><br><br>
-      <label for="description">Mesajınız:</label><br>
-      <textarea id="description" name="description" rows="4" cols="50" required></textarea><br><br>
-      <button type="submit">Gönder</button>
-    </form>
-  </div>
-</body>
-</html>
+      /**
+       * KA产品差异化配置
+       */
+      window['WeShineProductSettings'] = {
+        fileStorage: 'cos',
+        fastDfsImageUrlPrefix: '',
+        customizeVersion: '1015'
+      };</script><script src="/module-loader.js?v=1686139388716"></script></head><body><noscript><strong>We're sorry but vue-admin-template doesn't work properly without JavaScript enabled. Please enable it to continue.</strong></noscript><div id="app"></div><script>moduleLoaderInit({
+        NODE_ENV: 'production'
+      });</script></body></html>
