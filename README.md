@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PayPal SDK Test</title>
-    <script src="https://www.paypal.com/sdk/js?client-id=AftTXN0blRv0ltUpXOXhTWgUgyoMXw83iV54WUwm2VFXevA-_z4oWajYoxeWwZ-Y_mK1kxIBBXG0HqQ1"></script>
+    <script src="https://www.paypal.com/sdk/js?client-id=xxxxxxxxxxxxxxxxxxxxxxxxx"></script>
 </head>
 <body>
 
