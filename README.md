@@ -11,7 +11,7 @@
   <script>
     (async function() {
       const deepAR = await deepar.initialize({
-        licenseKey: 'your_license_key_here',
+        licenseKey: 'e187c2a41fe60c0fc702428d9927f43a4cbff4b3b7f6900abd61c5fae5057256058d13c3dbc65638',
         previewElement: document.querySelector('#deepar-div'),
         effect: 'https://cdn.jsdelivr.net/npm/deepar/effects/aviators'
       });
