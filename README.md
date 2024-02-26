@@ -1,21 +1,35 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <!-- Load deepar.js -->
-  <script src='https://cdn.jsdelivr.net/npm/deepar/js/deepar.js'> </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PayPal SDK Test</title>
+    <script src="https://www.paypal.com/sdk/js?client-id=AftTXN0blRv0ltUpXOXhTWgUgyoMXw83iV54WUwm2VFXevA-_z4oWajYoxeWwZ-Y_mK1kxIBBXG0HqQ1"></script>
 </head>
-
 <body>
-  <!-- Div element where AR preview will be inserted -->
-  <div style='width: 640px; height: 360px' id='deepar-div'></div>
-  <!-- Initialize DeepAR and load AR effect/filter -->
-  <script>
-    (async function() {
-      const deepAR = await deepar.initialize({
-        licenseKey: 'e187c2a41fe60c0fc702428d9927f43a4cbff4b3b7f6900abd61c5fae5057256058d13c3dbc65638',
-        previewElement: document.querySelector('#deepar-div'),
-        effect: 'https://cdn.jsdelivr.net/npm/deepar/effects/aviators'
-      });
-    })();
-  </script>
+
+<h1>PayPal SDK Test Form</h1>
+
+<div id="paypal-button-container"></div>
+
+<script>
+    paypal.Buttons({
+        createOrder: function(data, actions) {
+            return actions.order.create({
+                purchase_units: [{
+                    amount: {
+                        value: '0.01' // Ödeme miktarı
+                    }
+                }]
+            });
+        },
+        onApprove: function(data, actions) {
+            return actions.order.capture().then(function(details) {
+                alert('Transaction completed by ' + details.payer.name.given_name);
+            });
+        }
+    }).render('#paypal-button-container');
+</script>
+
 </body>
 </html>
