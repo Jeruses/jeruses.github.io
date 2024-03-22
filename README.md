@@ -23,21 +23,7 @@
     </div>
     <div class="slide" data-anchor="slide2">
       <h1>Slide 2.2</h1>
-    </div>
-  </div>
-  <div class="section"> 
-    <h2>Section 3</h2>
-  </div>
-</div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.2/fullpage.min.js"></script>
-<script>
-  new fullpage('#fullpage', {
-    sectionsColor: ['yellow', 'orange', '#C0C0C0', '#ADD8E6'],
-    
-    // Get your license at https://alvarotrigo.com/fullPage/pricing/
-    licenseKey: 'E55012B4-94AD436A-8FE96A39-676597A7'
-  });
 </script>
 
 </body>
